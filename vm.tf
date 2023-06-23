@@ -31,7 +31,7 @@ resource "azurerm_linux_virtual_machine" "myvm" {
   network_interface_ids = [azurerm_network_interface.interface.id]
   size                  = var.virtual_machine_size
   admin_username        = var.user
-  computer_name  = "hostname"
+  computer_name         = "hostname"
 
   source_image_reference {
     publisher = "Canonical"
@@ -49,7 +49,7 @@ resource "azurerm_linux_virtual_machine" "myvm" {
     username   = var.user
     public_key = tls_private_key.ssh.public_key_openssh
   }
-    
-  
+
+
 }
 
